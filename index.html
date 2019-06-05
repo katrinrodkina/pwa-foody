@@ -39,17 +39,7 @@
   <!-- recipes -->
   <div class="recipes container grey-text text-darken-1">
     <h6 class="center">Recipes:</h6>
-    <div class="card-panel recipe white row">
-      <img src="https://4.bp.blogspot.com/-WfRU-DQF8kI/WlErMZ8ADUI/AAAAAAAAGxE/Kx4HED0p1v0jpb6L0MBteyJ958cOsy5JQCLcBGAs/s1600/Sesame%2BGinger%2BEdamame%2BSpaghetti.jpg" 
-      alt="recipe thumb">
-      <div class="recipe-details">
-        <div class="recipe-title">Edame Noodles</div>
-        <div class="recipe-ingredients">Edame Beans, Noodels, Garlic oil</div>
-      </div>
-      <div class="recipe-delete">
-        <i class="material-icons">delete_outline</i>
-      </div>
-    </div>
+    
    
   </div>
 
@@ -77,8 +67,33 @@
       </div>
     </form>
   </div>
-  <script src="/js/app.js"></script>
-  <script src="/js/ui.js"></script>
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-firestore.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyCrgiS8JzH2mKr6yGUGVQG9bMHzRSsH-qw",
+    authDomain: "foody-cf99c.firebaseapp.com",
+    databaseURL: "https://foody-cf99c.firebaseio.com",
+    projectId: "foody-cf99c",
+    storageBucket: "foody-cf99c.appspot.com",
+    messagingSenderId: "241726323990",
+    appId: "1:241726323990:web:86e70e7a49deb036"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  //using it to get/set/... data
+  const db = firebase.firestore()
+</script>
+
+<script src="/js/app.js"></script>
+<script src="/js/ui.js"></script>
+<script src="/js/db.js"></script>
 
 </body>
 </html>

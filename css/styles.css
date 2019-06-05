@@ -1,8 +1,8 @@
 /* colours */
 :root{
-    --primary: #FFE9D2;
-    --secondary: #FFE1C4;
-    --title: #FF8816;
+    --primary: #944654;
+    --secondary: #944654;
+    --title: #white;
   }
   
   /* layout styles */
@@ -60,7 +60,7 @@
   
   /* form-styles */
   .add-btn{
-    background: var(--title) !important;
+    background: var(--primary) !important;
   }
   input{
     box-shadow: none !important;

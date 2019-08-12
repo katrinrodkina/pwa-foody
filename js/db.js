@@ -6,7 +6,7 @@ db.collection('recipes').onSnapshot(snapshot=> { //it takes a snapshot and sends
    // console.log(snapshot.docChanges())
    snapshot.docChanges().forEach(change => {
        //console.log( change, change.doc.data(), change.doc.id)
-       if (change.type === 'added') {
+       if (change.type === 'added') {   //listener for change
            //add data to webpage
            addRecipe( change.doc.data(), change.doc.id)
        }

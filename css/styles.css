@@ -73,3 +73,7 @@
   form .input-field{
     margin-top: 30px;
   }
+
+  .btn-small  {
+    background-color: #2bbbad !important;
+  }

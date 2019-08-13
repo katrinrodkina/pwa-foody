@@ -24,7 +24,7 @@ db.collection('recipes').onSnapshot(snapshot=> {
            showRecipes( change.doc.data(), change.doc.id)
        }
        if (change.type === 'removed') {
-           removeRecipe( change.doc.data(), change.doc.id)
+          removeRecipe(change.doc.id)
     }
    });
 })

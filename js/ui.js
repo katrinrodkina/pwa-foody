@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
 const recipes = document.querySelector('.recipes')
 const showRecipes =(data, id) => {
         const html = `
-        <div class="card-panel recipe white row" data-id "${id}">
+        <div class="card-panel recipe white row" data-id="${id}">
         <img src="https://4.bp.blogspot.com/-WfRU-DQF8kI/WlErMZ8ADUI/AAAAAAAAGxE/Kx4HED0p1v0jpb6L0MBteyJ958cOsy5JQCLcBGAs/s1600/Sesame%2BGinger%2BEdamame%2BSpaghetti.jpg" 
         alt="recipe thumb">
         <div class="recipe-details">
@@ -19,13 +19,17 @@ const showRecipes =(data, id) => {
           <div class="recipe-ingredients">${data.ingredients}</div>
         </div>
         <div class="recipe-delete">
-          <i class="material-icons"  data-id "${id}">delete_outline</i>
+          <i class="material-icons"  data-id="${id}">delete_outline</i>
         </div>
         </div>
       `
       recipes.innerHTML += html
 }
 
+const removeRecipe = (id) => {
+  const recipe = document.querySelector(`.recipe[data-id=${id}]`)
+  recipe.remove()
+}
 
 const form = document.querySelector('form')
 form.addEventListener('submit', evt => {
@@ -41,3 +45,13 @@ form.addEventListener('submit', evt => {
     form.title.value = '';
     form.ingredients.value = '';
 })
+
+const allRecipes = document.querySelector('.recipes')
+allRecipes.addEventListener('click', evt => {
+   //console.log(evt.target.tagName)
+   if (evt.target.tagName === 'I') {
+    // console.log(evt.target.getAttribute('data-id'))
+     db.collection('recipes').doc(evt.target.getAttribute('data-id')).delete()
+   }
+})
+
